@@ -1,0 +1,795 @@
+/* ============ БАЗА ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sand-light: #f4d9b0;
+  --sand: #d4a574;
+  --sand-dark: #b8895a;
+  --sunset: #ff6b35;
+  --sunset-deep: #c44536;
+  --night: #3d2817;
+  --sky: #87ceeb;
+  --text: #2b1810;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  background: var(--sand-light);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ff9a56 0%, #ffb87a 40%, #f4d9b0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #fff3b0 0%, #ffd166 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: sunPulse 4s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    opacity: 1;
+  }
+}
+
+.dunes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-repeat: repeat-x;
+}
+
+.dunes-back {
+  background:
+    radial-gradient(
+      ellipse 400px 120px at 20% 100%,
+      #c9965a 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 500px 140px at 70% 100%,
+      #c9965a 0%,
+      transparent 70%
+    );
+  height: 50%;
+  opacity: 0.6;
+}
+
+.dunes-mid {
+  background:
+    radial-gradient(
+      ellipse 450px 130px at 40% 100%,
+      #b8895a 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 400px 120px at 85% 100%,
+      #b8895a 0%,
+      transparent 70%
+    );
+  height: 40%;
+  opacity: 0.8;
+}
+
+.dunes-front {
+  background:
+    radial-gradient(
+      ellipse 500px 150px at 10% 100%,
+      #a07848 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 600px 160px at 60% 100%,
+      #a07848 0%,
+      transparent 70%
+    );
+  height: 35%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: var(--night);
+  padding: 0 20px;
+  margin-top: -10vh;
+}
+
+.eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-shadow: 4px 4px 0 rgba(255, 107, 53, 0.3);
+  margin-bottom: 20px;
+  animation: titleAppear 1.5s ease-out;
+}
+
+@keyframes titleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  opacity: 0.85;
+}
+
+.cta {
+  background: var(--sunset);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-family: inherit;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  transition: all 0.3s;
+  letter-spacing: 1px;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.5);
+  background: var(--sunset-deep);
+}
+
+.bilby-hero {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  z-index: 5;
+  animation: bilbyWalk 3s ease-in-out infinite;
+  filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes bilbyWalk {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px) rotate(1deg);
+  }
+}
+
+/* ============ CHAPTERS ============ */
+.chapter {
+  padding: 100px 20px;
+  position: relative;
+}
+
+.chapter-alt {
+  background: linear-gradient(180deg, var(--sand-light) 0%, #f0c99a 100%);
+}
+
+.chapter-climax {
+  background: linear-gradient(180deg, #e8a87c 0%, #c44536 100%);
+  color: #fff;
+}
+
+.chapter-climax .chapter-num {
+  color: #ffd166;
+}
+
+.chapter-finale {
+  background: linear-gradient(180deg, #ffd6a5 0%, #87ceeb 100%);
+}
+
+.chapter-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.chapter:nth-child(even) .chapter-inner {
+  direction: rtl;
+}
+.chapter:nth-child(even) .chapter-inner > * {
+  direction: ltr;
+}
+
+.chapter-num {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sunset);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.chapter h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.chapter p {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.scene-svg {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ ИГРА ============ */
+.game-section {
+  background: linear-gradient(180deg, #c44536 0%, #8b2e1f 100%);
+  color: #fff;
+}
+
+.game-section .chapter-num {
+  color: #ffd166;
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 5/4;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  background: #f4a261;
+}
+
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.game-overlay.hidden {
+  opacity: 0;
+}
+
+.game-hint {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin: 15px 0;
+}
+
+.game-stats {
+  display: flex;
+  gap: 25px;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.game-stats span {
+  color: #ffd166;
+  font-weight: bold;
+}
+
+/* ============ ЦИТАТА ============ */
+.quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  border-left: 4px solid var(--sunset);
+  padding: 15px 25px;
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0 10px 10px 0;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--night);
+  color: var(--sand-light);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.back-top {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--sunset);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: transform 0.3s;
+}
+
+.back-top:hover {
+  transform: translateY(-3px);
+}
+
+/* ============ АНИМАЦИИ SVG ============ */
+.hawk {
+  animation: hawkFly 6s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes hawkFly {
+  0%,
+  100% {
+    transform: translate(80px, 60px);
+  }
+  50% {
+    transform: translate(150px, 50px);
+  }
+}
+
+.giant-hawk {
+  animation: giantHover 3s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes giantHover {
+  0%,
+  100% {
+    transform: translate(200px, 100px) scale(1);
+  }
+  50% {
+    transform: translate(200px, 90px) scale(1.05);
+  }
+}
+
+.albatross-fly {
+  animation: albatrossGlide 8s ease-in-out infinite;
+}
+@keyframes albatrossGlide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+/* ============ АДАПТИВ ============ */
+@media (max-width: 800px) {
+  .chapter-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .chapter:nth-child(even) .chapter-inner {
+    direction: ltr;
+  }
+  .chapter {
+    padding: 60px 20px;
+  }
+  .bilby-hero {
+    width: 130px;
+  }
+  .sun {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ============ ГАЛЕРЕЯ (фото) ============ */
+.gallery-section {
+  background: linear-gradient(180deg, #87ceeb 0%, #ffd6a5 100%);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.4s,
+    box-shadow 0.4s;
+  background: #fff;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition:
+    transform 0.6s ease,
+    filter 0.4s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s;
+  margin: 0;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  padding: 20px;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition:
+    background 0.3s,
+    transform 0.3s;
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 107, 53, 0.8);
+  transform: rotate(90deg);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+  z-index: 10;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 107, 53, 0.7);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+.lightbox-prev:hover {
+  transform: translateY(-50%) translateX(-4px);
+}
+.lightbox-next {
+  right: 20px;
+}
+.lightbox-next:hover {
+  transform: translateY(-50%) translateX(4px);
+}
+
+.lightbox-content {
+  max-width: min(900px, 90vw);
+  border-radius: 16px;
+  overflow: hidden;
+  transform: scale(0.85);
+  transition: transform 0.4s;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox.active .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.lightbox-caption {
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Фото на лицевой стороне карточки факта */
+.fact-front-photo {
+  padding: 0 !important;
+  overflow: hidden;
+  position: relative;
+  justify-content: flex-end !important;
+}
+
+.fact-front-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fact-front-photo h3 {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff !important;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Адаптив галереи */
+@media (max-width: 1000px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 750px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-item img {
+    height: 180px;
+  }
+  .lightbox-nav {
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+@media (max-width: 450px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+/* ============ ФАКТЫ ============ */
+.facts-section {
+  background: linear-gradient(180deg, #ffd6a5 0%, #f4d9b0 100%);
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.fact-card {
+  perspective: 1000px;
+  height: 220px;
+  cursor: pointer;
+}
+
+.fact-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.fact-card:hover .fact-inner,
+.fact-card.flipped .fact-inner {
+  transform: rotateY(180deg);
+}
+
+.fact-front,
+.fact-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.fact-front {
+  background: linear-gradient(135deg, #fff 0%, #ffe8cc 100%);
+  border: 2px solid var(--sand);
+}
+
+.fact-back {
+  background: linear-gradient(
+    135deg,
+    var(--sunset) 0%,
+    var(--sunset-deep) 100%
+  );
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.fact-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.fact-front h3 {
+  font-size: 1.1rem;
+  color: var(--night);
+  line-height: 1.3;
+}
+
+.fact-back p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============ АДАПТИВ ГАЛЕРЕИ И ФАКТОВ ============ */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  .facts-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  .fact-card {
+    height: 200px;
+  }
+}

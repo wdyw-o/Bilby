@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Билби — История дружбы в австралийской пустыне</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="sun"></div>
+      <div class="dunes dunes-back"></div>
+      <div class="dunes dunes-mid"></div>
+      <div class="dunes dunes-front"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Короткометражный мультфильм · 2018</p>
+        <h1 class="title">Билби</h1>
+        <p class="subtitle">
+          Маленький герой. Большая пустыня. Неожиданная дружба.
+        </p>
+        <button class="cta" id="startBtn">Начать путешествие ↓</button>
+      </div>
+
+      <!-- SVG билби в hero -->
+      <svg
+        class="bilby-hero"
+        viewBox="0 0 200 180"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- хвост -->
+        <path d="M30 120 Q10 100 25 85 Q40 75 55 95 Z" fill="#5a4636" />
+        <path d="M25 115 Q15 105 22 95 Q32 90 40 100 Z" fill="#1a1a1a" />
+        <!-- тело -->
+        <ellipse cx="100" cy="120" rx="55" ry="35" fill="#7a6350" />
+        <ellipse cx="100" cy="130" rx="45" ry="22" fill="#a88b6e" />
+        <!-- голова -->
+        <ellipse cx="145" cy="100" rx="30" ry="25" fill="#7a6350" />
+        <!-- уши -->
+        <path d="M135 80 Q130 50 140 45 Q148 55 145 80 Z" fill="#5a4636" />
+        <path d="M155 80 Q160 50 150 45 Q142 55 145 80 Z" fill="#5a4636" />
+        <path d="M137 78 Q134 58 141 55 Q145 62 143 78 Z" fill="#d4a574" />
+        <path d="M153 78 Q156 58 149 55 Q145 62 147 78 Z" fill="#d4a574" />
+        <!-- морда -->
+        <ellipse cx="165" cy="105" rx="15" ry="12" fill="#a88b6e" />
+        <circle cx="173" cy="100" r="3" fill="#1a1a1a" />
+        <!-- глаз -->
+        <circle cx="155" cy="95" r="4" fill="#1a1a1a" />
+        <circle cx="156" cy="94" r="1.5" fill="#fff" />
+        <!-- лапки -->
+        <ellipse cx="75" cy="150" rx="10" ry="6" fill="#5a4636" />
+        <ellipse cx="125" cy="150" rx="10" ry="6" fill="#5a4636" />
+      </svg>
+    </section>
+
+    <!-- ============ ЗАВЯЗКА ============ -->
+    <section class="chapter" id="chapter1">
+      <div class="chapter-inner">
+        <div class="chapter-text reveal">
+          <span class="chapter-num">Глава I</span>
+          <h2>Одиночка в аутбэке</h2>
+          <p>
+            Перри — маленький билби, живущий в суровой австралийской пустыне.
+            Каждый его день — это игра в прятки со смертью: орлы кружат в небе,
+            змеи шипят в песках, крокодилы подстерегают у воды.
+          </p>
+          <p>
+            Но Перри ловок и осторожен. Он знает каждое укрытие, каждую трещину
+            в земле. Его жизнь — размеренная, тихая, одинокая.
+          </p>
+        </div>
+        <div class="chapter-art reveal">
+          <svg viewBox="0 0 400 300" class="scene-svg">
+            <!-- небо -->
+            <rect width="400" height="300" fill="#f4a261" />
+            <circle cx="320" cy="80" r="40" fill="#ffd166" />
+            <!-- хищная птица в небе -->
+            <g class="hawk" transform="translate(80, 60)">
+              <path d="M0 10 Q20 -5 40 10 Q20 5 0 10 Z" fill="#2b1810" />
+              <path d="M15 10 L20 20 L25 10 Z" fill="#2b1810" />
+            </g>
+            <!-- дюны -->
+            <path
+              d="M0 200 Q100 150 200 180 Q300 210 400 170 L400 300 L0 300 Z"
+              fill="#d4a574"
+            />
+            <path
+              d="M0 240 Q100 200 200 220 Q300 240 400 210 L400 300 L0 300 Z"
+              fill="#b8895a"
+            />
+            <!-- кактус -->
+            <g transform="translate(60, 180)">
+              <rect x="0" y="0" width="12" height="40" fill="#4a7c3a" rx="3" />
+              <rect
+                x="-10"
+                y="10"
+                width="8"
+                height="20"
+                fill="#4a7c3a"
+                rx="3"
+              />
+              <rect x="14" y="5" width="8" height="25" fill="#4a7c3a" rx="3" />
+            </g>
+            <!-- камень -->
+            <ellipse cx="300" cy="250" rx="30" ry="15" fill="#6b4423" />
+            <!-- билби прячется -->
+            <g transform="translate(200, 210)">
+              <ellipse cx="0" cy="0" rx="25" ry="15" fill="#7a6350" />
+              <ellipse cx="15" cy="-8" rx="12" ry="10" fill="#7a6350" />
+              <circle cx="20" cy="-10" r="2" fill="#1a1a1a" />
+              <path
+                d="M-20 0 Q-30 -10 -25 -18 Q-15 -15 -15 -5 Z"
+                fill="#5a4636"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ НАХОДКА ============ -->
+    <section class="chapter chapter-alt" id="chapter2">
+      <div class="chapter-inner">
+        <div class="chapter-art reveal">
+          <svg viewBox="0 0 400 300" class="scene-svg">
+            <rect width="400" height="300" fill="#e9c46a" />
+            <!-- яйцо/птенец -->
+            <g transform="translate(200, 180)">
+              <!-- птенец альбатроса -->
+              <ellipse cx="0" cy="0" rx="35" ry="30" fill="#fafafa" />
+              <ellipse cx="0" cy="5" rx="28" ry="22" fill="#ffffff" />
+              <!-- голова -->
+              <circle cx="20" cy="-15" r="18" fill="#ffffff" />
+              <!-- глаз -->
+              <circle cx="26" cy="-18" r="3" fill="#1a1a1a" />
+              <circle cx="27" cy="-19" r="1" fill="#fff" />
+              <!-- клюв -->
+              <path d="M35 -15 L45 -12 L35 -10 Z" fill="#f4a261" />
+              <!-- крылышко -->
+              <path d="M-15 -5 Q-25 0 -20 15 Q-10 10 -10 0 Z" fill="#e8e8e8" />
+              <!-- пушинки -->
+              <circle cx="-10" cy="-20" r="2" fill="#fff" />
+              <circle cx="5" cy="-25" r="2" fill="#fff" />
+              <circle cx="-5" cy="15" r="2" fill="#fff" />
+            </g>
+            <!-- билби рядом -->
+            <g transform="translate(100, 220)">
+              <ellipse cx="0" cy="0" rx="30" ry="18" fill="#7a6350" />
+              <ellipse cx="20" cy="-10" rx="15" ry="12" fill="#7a6350" />
+              <!-- уши -->
+              <path
+                d="M15 -18 Q12 -30 18 -32 Q22 -25 20 -18 Z"
+                fill="#5a4636"
+              />
+              <path
+                d="M25 -18 Q28 -30 22 -32 Q18 -25 20 -18 Z"
+                fill="#5a4636"
+              />
+              <!-- глаз -->
+              <circle cx="25" cy="-12" r="2.5" fill="#1a1a1a" />
+              <!-- хвост -->
+              <path
+                d="M-25 0 Q-35 -8 -30 -18 Q-20 -15 -20 -5 Z"
+                fill="#5a4636"
+              />
+              <path
+                d="M-28 -5 Q-32 -10 -28 -15 Q-22 -12 -22 -7 Z"
+                fill="#1a1a1a"
+              />
+            </g>
+            <!-- песок -->
+            <path
+              d="M0 260 Q200 240 400 260 L400 300 L0 300 Z"
+              fill="#c9965a"
+            />
+          </svg>
+        </div>
+        <div class="chapter-text reveal">
+          <span class="chapter-num">Глава II</span>
+          <h2>Неожиданная находка</h2>
+          <p>
+            Во время обычной вылазки за пропитанием Перри находит крошечного
+            пушистого птенца альбатроса. Малыш совершенно не приспособлен к
+            жизни в пустыне — он не умеет бояться, не знает хищников и сразу
+            привязывается к угрюмому билби.
+          </p>
+          <p>
+            Перри пытается уйти. Но видит, что на беззащитного малыша уже
+            открыли охоту местные хищники. И... не может бросить.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ МИНИ-ИГРА ============ -->
+    <section class="chapter game-section" id="game">
+      <div class="chapter-inner">
+        <div class="chapter-text reveal">
+          <span class="chapter-num">Глава III</span>
+          <h2>Полоса препятствий</h2>
+          <p>
+            Перри становится телохранителем. На их пути — гигантские орлы,
+            ядовитые змеи, скорпионы и голодные крокодилы. Помоги билби провести
+            птенца через пустыню!
+          </p>
+          <p class="game-hint">
+            🎮 Управление: <b>← →</b> или <b>A / D</b>. На мобильном — касайся
+            левой/правой части экрана.
+          </p>
+          <button class="cta" id="playBtn">Играть ▶</button>
+          <div class="game-stats">
+            <div>Пройдено: <span id="score">0</span> м</div>
+            <div>Рекорд: <span id="best">0</span> м</div>
+          </div>
+        </div>
+        <div class="chapter-art reveal">
+          <div class="game-container" id="gameContainer">
+            <canvas id="gameCanvas" width="500" height="400"></canvas>
+            <div class="game-overlay" id="gameOverlay">
+              <div class="game-overlay-text">Нажми «Играть»</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ КУЛЬМИНАЦИЯ ============ -->
+    <section class="chapter chapter-climax" id="chapter4">
+      <div class="chapter-inner">
+        <div class="chapter-text reveal">
+          <span class="chapter-num">Глава IV</span>
+          <h2>Решающая битва</h2>
+          <p>
+            В финале героев настигает самый крупный и опасный хищник. Он уже
+            почти схватил малыша. И тогда Перри делает то, чего от него никто не
+            ждал — бросается в бой, рискуя собственной жизнью.
+          </p>
+          <p>
+            Маленький билби против огромной тени. Но в его сердце теперь не
+            страх — а любовь к новому другу.
+          </p>
+        </div>
+        <div class="chapter-art reveal">
+          <svg viewBox="0 0 400 300" class="scene-svg climax-svg">
+            <defs>
+              <radialGradient id="dramatic" cx="50%" cy="50%">
+                <stop offset="0%" stop-color="#ff6b35" />
+                <stop offset="100%" stop-color="#6b1e0f" />
+              </radialGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#dramatic)" />
+            <!-- гигантский орёл -->
+            <g class="giant-hawk" transform="translate(200, 100)">
+              <path
+                d="M-120 0 Q-60 -40 0 -20 Q60 -40 120 0 Q60 20 0 10 Q-60 20 -120 0 Z"
+                fill="#1a0f08"
+              />
+              <path
+                d="M-100 -5 Q-50 -30 0 -15 Q50 -30 100 -5 Q50 10 0 5 Q-50 10 -100 -5 Z"
+                fill="#3d2817"
+              />
+              <circle cx="0" cy="-10" r="8" fill="#1a0f08" />
+              <circle cx="3" cy="-12" r="2" fill="#ff6b35" />
+              <path d="M0 -5 L5 5 L-5 5 Z" fill="#f4a261" />
+            </g>
+            <!-- билби защищает -->
+            <g transform="translate(200, 230)">
+              <ellipse cx="0" cy="0" rx="25" ry="15" fill="#7a6350" />
+              <ellipse cx="15" cy="-8" rx="12" ry="10" fill="#7a6350" />
+              <path d="M10 -15 Q7 -25 13 -27 Q17 -22 15 -15 Z" fill="#5a4636" />
+              <path
+                d="M20 -15 Q23 -25 17 -27 Q13 -22 15 -15 Z"
+                fill="#5a4636"
+              />
+              <circle cx="20" cy="-10" r="2" fill="#1a1a1a" />
+              <!-- лапки подняты -->
+              <path d="M-5 -15 L-10 -25 L-5 -22 Z" fill="#5a4636" />
+              <path d="M5 -15 L10 -25 L5 -22 Z" fill="#5a4636" />
+            </g>
+            <!-- птенец за спиной -->
+            <g transform="translate(230, 240)">
+              <ellipse cx="0" cy="0" rx="15" ry="12" fill="#fff" />
+              <circle cx="8" cy="-5" r="8" fill="#fff" />
+              <circle cx="11" cy="-6" r="1.5" fill="#1a1a1a" />
+              <path d="M15 -5 L20 -3 L15 -1 Z" fill="#f4a261" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ФИНАЛ ============ -->
+    <section class="chapter chapter-finale" id="chapter5">
+      <div class="chapter-inner">
+        <div class="chapter-art reveal">
+          <svg viewBox="0 0 400 300" class="scene-svg finale-svg">
+            <defs>
+              <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#87ceeb" />
+                <stop offset="100%" stop-color="#ffd6a5" />
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#sky)" />
+            <!-- солнце -->
+            <circle cx="320" cy="70" r="30" fill="#fff3b0" opacity="0.8" />
+            <!-- море -->
+            <rect y="180" width="400" height="120" fill="#4a90b8" />
+            <path
+              d="M0 190 Q50 185 100 190 T200 190 T300 190 T400 190 L400 200 L0 200 Z"
+              fill="#5aa0c8"
+              opacity="0.6"
+            />
+            <path
+              d="M0 210 Q50 205 100 210 T200 210 T300 210 T400 210 L400 220 L0 220 Z"
+              fill="#5aa0c8"
+              opacity="0.5"
+            />
+            <!-- берег -->
+            <path
+              d="M0 250 Q100 240 200 245 Q300 250 400 240 L400 300 L0 300 Z"
+              fill="#e8c39e"
+            />
+            <!-- альбатросы в небе -->
+            <g class="albatross-fly">
+              <path
+                d="M50 60 Q60 55 70 60 Q60 58 50 60 Z"
+                fill="#fff"
+                stroke="#333"
+                stroke-width="0.5"
+              />
+              <path
+                d="M120 80 Q130 75 140 80 Q130 78 120 80 Z"
+                fill="#fff"
+                stroke="#333"
+                stroke-width="0.5"
+              />
+              <path
+                d="M200 50 Q210 45 220 50 Q210 48 200 50 Z"
+                fill="#fff"
+                stroke="#333"
+                stroke-width="0.5"
+              />
+            </g>
+            <!-- билби на берегу -->
+            <g transform="translate(100, 250)">
+              <ellipse cx="0" cy="0" rx="22" ry="13" fill="#7a6350" />
+              <ellipse cx="15" cy="-8" rx="11" ry="9" fill="#7a6350" />
+              <path d="M10 -14 Q8 -23 13 -25 Q16 -20 14 -14 Z" fill="#5a4636" />
+              <path
+                d="M20 -14 Q22 -23 17 -25 Q14 -20 16 -14 Z"
+                fill="#5a4636"
+              />
+              <circle cx="19" cy="-9" r="2" fill="#1a1a1a" />
+              <path
+                d="M-18 0 Q-25 -6 -22 -14 Q-15 -12 -15 -5 Z"
+                fill="#5a4636"
+              />
+              <path
+                d="M-20 -3 Q-24 -8 -20 -12 Q-16 -10 -16 -5 Z"
+                fill="#1a1a1a"
+              />
+            </g>
+            <!-- птенец уплывает -->
+            <g transform="translate(250, 220)">
+              <ellipse cx="0" cy="0" rx="18" ry="14" fill="#fff" />
+              <circle cx="10" cy="-8" r="10" fill="#fff" />
+              <circle cx="14" cy="-9" r="2" fill="#1a1a1a" />
+              <path d="M18 -8 L24 -6 L18 -4 Z" fill="#f4a261" />
+              <path d="M-8 5 Q-15 8 -12 14 Q-5 12 -5 8 Z" fill="#e8e8e8" />
+            </g>
+          </svg>
+        </div>
+        <div class="chapter-text reveal">
+          <span class="chapter-num">Глава V</span>
+          <h2>Трогательное прощание</h2>
+          <p>
+            Перри удаётся одолеть врага и довести птенца до побережья, где живут
+            другие альбатросы. Крепкий, окрылённый малыш уплывает к сородичам.
+          </p>
+          <p>
+            Билби смотрит ему вслед — с грустью, но с чувством выполненного
+            долга. Он больше не одинок. Он обрёл настоящего друга.
+          </p>
+          <blockquote class="quote">
+            «Иногда самые маленькие герои совершают самые большие подвиги.»
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ГАЛЕРЕЯ ============ -->
+    <section class="chapter gallery-section" id="gallery">
+      <div
+        class="chapter-inner"
+        style="grid-template-columns: 1fr; text-align: center"
+      >
+        <div class="reveal">
+          <span class="chapter-num">Галерея</span>
+          <h2>Кадры из мультфильма</h2>
+          <p style="max-width: 700px; margin: 0 auto 40px">
+            Нажми на кадр, чтобы рассмотреть его в полном размере и листать
+            коллекцию стрелками.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item reveal">
+          <img src="images/1.png" alt="Билби в норе" loading="lazy" />
+          <figcaption class="gallery-caption">Пустыня опасна</figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal">
+          <img
+            src="images/2.png"
+            alt="Билби и птенец альбатроса при встрече"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Судьбоносная встреча</figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal">
+          <img
+            src="images/6.png"
+            alt="Птенец почти покормил скорпионов собой"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Первое угощение</figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal">
+          <img
+            src="images/7.png"
+            alt="Перри убегает от пираньи с птенцом"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Река с пираньями</figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal">
+          <img
+            src="images/4.png"
+            alt="Крупный план пушистого птенца альбатроса"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Пушистый друг</figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal">
+          <img src="images/12.png" alt="3D-модель билби Перри" loading="lazy" />
+          <figcaption class="gallery-caption">Перри — герой пустыни</figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal">
+          <img
+            src="images/13.png"
+            alt="билби с птенцом в руках"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Птенец спасен</figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal">
+          <img
+            src="images/14.png"
+            alt="Финал у моря: билби и птенец на скале"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">Финал у моря</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-close" id="lightboxClose">✕</div>
+      <div class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</div>
+      <div class="lightbox-nav lightbox-next" id="lightboxNext">›</div>
+      <div class="lightbox-content" id="lightboxContent"></div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- ============ ИНТЕРЕСНЫЕ ФАКТЫ ============ -->
+    <section class="chapter facts-section" id="facts">
+      <div
+        class="chapter-inner"
+        style="grid-template-columns: 1fr; text-align: center"
+      >
+        <div class="reveal">
+          <span class="chapter-num">За кадром</span>
+          <h2>Интересные факты</h2>
+          <p style="max-width: 700px; margin: 0 auto 40px">
+            Наведи на карточку (или тапни на мобильном), чтобы узнать
+            удивительные подробности о мультфильме и его героях.
+          </p>
+        </div>
+      </div>
+
+      <div class="facts-grid">
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">🏆</div>
+              <h3>Номинация на «Оскар»</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                В 2019 году «Билби» был номинирован на премию «Оскар» в
+                категории «Лучший анимационный короткометражный фильм».
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">🎬</div>
+              <h3>Режиссёр-ветеран</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                Режиссёр Пьер Перифе ранее работал над «Кунг-Фу Пандой» и
+                «Монстрами против пришельцев». «Билби» — его режиссёрский дебют.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">🦡</div>
+              <h3>Реальный герой</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                Билби — настоящее сумчатое животное из Австралии. К сожалению,
+                этот вид находится под угрозой вымирания из-за завезённых
+                хищников.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">🐦</div>
+              <h3>Художественный вымысел</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                Альбатросы — морские птицы и в пустыне не водятся. Но создатели
+                пожертвовали реализмом ради трогательной истории дружбы.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">⏱️</div>
+              <h3>Всего 8 минут</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                Хронометраж мультфильма — около 8 минут. Но за это время авторы
+                уместили целую эпическую историю с погонями, битвами и слезами.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">🔍</div>
+              <h3>Изучали оригинал</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                Аниматоры DreamWorks специально изучали видео с настоящими
+                билби, чтобы достоверно передать их движения, уши и характерный
+                хвост.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">🎵</div>
+              <h3>Живой оркестр</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                Саундтрек записан живым оркестром. Музыка меняет настроение
+                вместе с героем — от тревоги до нежности и триумфа.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fact-card reveal">
+          <div class="fact-inner">
+            <div class="fact-front">
+              <div class="fact-icon">🍄</div>
+              <h3>Что едят билби?</h3>
+            </div>
+            <div class="fact-back">
+              <p>
+                В природе билби питаются насекомыми, личинками, семенами и даже
+                грибами. В мультфильме Перри ищет именно такую добычу!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ФУТЕР ============ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>🦊 Фан-сайт по мотивам мультфильма «Билби» (DreamWorks, 2018)</p>
+        <p>Сделано с любовью к маленьким героям большой пустыни</p>
+        <a href="#top" class="back-top">↑ Наверх</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
