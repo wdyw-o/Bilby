@@ -475,3 +475,43 @@ document.querySelectorAll(".fact-card").forEach((card) => {
     }
   });
 });
+
+/* ============ КНОПКА «СМОТРЕТЬ» ============ */
+const watchBtn = document.getElementById("watchBtn");
+if (watchBtn) {
+  watchBtn.addEventListener("click", () => {
+    document.getElementById("watch").scrollIntoView({ behavior: "smooth" });
+    // Автофокус на плеер через 800мс (после завершения скролла)
+    setTimeout(() => {
+      const iframe = document.getElementById("bilbyPlayer");
+      if (iframe) iframe.focus();
+    }, 800);
+  });
+}
+
+/* ============ ЛЕНИВАЯ ЗАГРУЗКА ПЛЕЕРА ============ */
+// Загружаем iframe только когда секция в зоне видимости
+const watchSection = document.getElementById("watch");
+const bilbyPlayer = document.getElementById("bilbyPlayer");
+let playerLoaded = false;
+
+if (watchSection && bilbyPlayer) {
+  // Сохраняем оригинальный src и заменяем на пустой
+  const realSrc = bilbyPlayer.src;
+  bilbyPlayer.src = "about:blank";
+
+  const playerObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !playerLoaded) {
+          bilbyPlayer.src = realSrc;
+          playerLoaded = true;
+          playerObserver.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  playerObserver.observe(watchSection);
+}

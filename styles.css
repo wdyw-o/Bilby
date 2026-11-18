@@ -793,3 +793,235 @@ body {
     height: 200px;
   }
 }
+
+/* ============ СМОТРЕТЬ МУЛЬТФИЛЬМ ============ */
+.watch-section {
+  position: relative;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #1a0f08 0%, #3d2817 50%, #1a0f08 100%);
+  color: #f4d9b0;
+  overflow: hidden;
+}
+
+.watch-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 107, 53, 0.15) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(135, 206, 235, 0.1) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+}
+
+.watch-inner {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 2;
+}
+
+.watch-header {
+  margin-bottom: 40px;
+}
+
+.chapter-num-light {
+  color: #ffd166 !important;
+}
+
+.watch-section h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 15px 0 20px;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+}
+
+.watch-subtitle {
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* Плеер */
+.watch-player {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.player-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 209, 102, 0.3);
+  transition:
+    transform 0.5s,
+    box-shadow 0.5s;
+}
+
+.player-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 209, 102, 0.6),
+    0 0 40px rgba(255, 107, 53, 0.3);
+}
+
+.player-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.player-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 53, 0.2) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: -1;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Инфо-бейджи */
+.watch-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.info-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 209, 102, 0.2);
+  border-radius: 14px;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.info-badge:hover {
+  background: rgba(255, 209, 102, 0.1);
+  border-color: rgba(255, 209, 102, 0.5);
+  transform: translateY(-3px);
+}
+
+.info-icon {
+  font-size: 2rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  margin-bottom: 3px;
+}
+
+.info-value {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #ffd166;
+}
+
+/* Подсказка */
+.watch-note {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 18px 25px;
+  background: rgba(255, 209, 102, 0.1);
+  border-left: 3px solid #ffd166;
+  border-radius: 0 12px 12px 0;
+  font-size: 0.95rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Кнопки в hero */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.cta-alt {
+  background: transparent;
+  color: var(--night);
+  border: 2px solid var(--night);
+  box-shadow: none;
+}
+
+.cta-alt:hover {
+  background: var(--night);
+  color: var(--sand-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Ссылки в футере */
+.footer-link {
+  color: var(--sunset);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #ffd166;
+}
+
+/* Адаптив секции просмотра */
+@media (max-width: 750px) {
+  .watch-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .watch-section {
+    padding: 70px 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .watch-info {
+    grid-template-columns: 1fr;
+  }
+  .info-badge {
+    padding: 15px;
+  }
+}
